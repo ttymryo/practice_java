@@ -1,3 +1,4 @@
+import java.awt.Font;
 import java.awt.Graphics;
 
 import javax.swing.JFrame;
@@ -24,7 +25,17 @@ class GameWindow extends JFrame{
 
 class DrawCanvas1 extends JPanel{
 	public void paintComponent(Graphics g) {
-		super.paintComponents(g);;
-		g.drawString("あいうえお",150,150);
+		super.paintComponents(g);
+		Font font1 = new Font("ＭＳ Ｐゴシック", Font.PLAIN,12);
+		g.setFont(font1);
+		g.drawString("あいうえお",150,50);
+		
+		Font font2 = new Font("HGP行書体",Font.BOLD,20);
+		g.setFont(font2);
+		g.drawString("あいうえお",150,100);
+		
+		Font font3 = new Font("HGP創英角ﾎﾟｯﾌﾟ体",Font.ITALIC,30);
+		g.setFont(font3);
+		g.drawString("あいうえお", 150, 150);
 	}
 }
