@@ -30,5 +30,8 @@ class DrawCanvas extends JPanel{
 		g.drawLine(100, 100, 200, 200);
 		g.drawRect(100, 100, 50, 50);
 		g.fillRect(200, 100, 50, 50);
+		g.drawOval(250, 150, 50, 50);
+		g.fillOval(150, 150, 50, 50);
+		g.drawPolygon(new int[] {125,150,100}, new int[] {100,150,150}, 3);
 	}
 }
