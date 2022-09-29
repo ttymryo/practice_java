@@ -1,5 +1,6 @@
 import java.awt.Graphics;
 import java.awt.Image;
+import java.awt.MediaTracker;
 import java.awt.Toolkit;
 
 import javax.swing.JFrame;
@@ -24,10 +25,21 @@ class GameWindow4 extends JFrame{
 	}
 }
 class DrawCanvas4 extends JPanel{
-	Image img = Toolkit.getDefaultToolkit().getImage("src/test3.jpg");
+	Image img;
+	DrawCanvas4(){
+		Image img = Toolkit.getDefaultToolkit().getImage("src/test3.jpg");
+		MediaTracker mt = new MediaTracker(this);
+		mt.addImage(img,0);
+		try {
+			mt.waitForAll();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		this.img = img;
+	}
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		//画像の表示
-		g.drawImage(img, 0, 0, this);
+		g.drawImage(img, 0, 0, null);
 	}
 }
